@@ -1,9 +1,9 @@
-ruta(a,b, avion, 1, 11, 100, si).
-ruta(a,b, avion, 3, 5, 200, si).
-ruta(b,c, avion, 20, 300, 23, si).
-ruta(b,c, avion, 50, 70, 56, si).
-ruta(c,d, avion, 3, 4, 9, si).
-ruta(b,d, avion, 2, 3, 900000, si).
+ruta(medellin,bogota, avion, 1, 11, 100, si).
+ruta(medellin,bogota, avion, 3, 5, 200, si).
+ruta(bogota,cartagena, avion, 20, 300, 23, si).
+ruta(bogota,cartagena, avion, 50, 70, 56, si).
+ruta(cartagena,pasto, avion, 3, 4, 9, si).
+ruta(bogota,pasto, avion, 2, 3, 900000, si).
 
 
 mayor_o_igual(X, Y) :-X >= Y.  %el >= no funciona en variables
@@ -17,3 +17,4 @@ caminoe_acum(Origen, Origen, Visitados, Camino, Preciofin, Preciofin,Hfinal,Hfin
 caminoe_acum(Origen, Destino, Visitados, Camino,Preciofin, Precioaccum,Hfinal, Haccum, Posi,Hde,Harr):-ruta(Origen, Intermedio,_,Hsal,Hlleg,Precioruta,si),mayor_o_igual(Harr, Hlleg),mayor_o_igual(Hsal, Hde),mayor_o_igual(Hsal, Posi),H is Haccum + Hlleg-Hsal ,Precio is Precioaccum+Precioruta, \+ member(Intermedio, Visitados), caminoe_acum(Intermedio, Destino, [Intermedio | Visitados], Camino, Preciofin, Precio, Hfinal, H,Hlleg,Hde,Harr).
 cheapestentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max):-findall((Preciofinal, Camino), caminoentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max), Values), min_member((Preciofinal, Camino),Values).
 fastestentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max):-findall((Hfinal, Camino), caminoentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max), Values), min_member((Hfinal, Camino),Values).
+
