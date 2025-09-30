@@ -1,65 +1,69 @@
-plataforma(dell, 'DL001', 2022, 8, amd, 6, 256, laptop, nvidia, 4).
-plataforma(hp, 'HP002', 2021, 16, intel, 8, 512, laptop, nvidia, 6).
-plataforma(lenovo, 'LV003', 2023, 32, amd, 12, 1024, pc, amd, 8).
-plataforma(asus, 'AS004', 2020, 4, intel, 4, 128, laptop, intel, 2).
-plataforma(acer, 'AC005', 2022, 16, amd, 8, 512, laptop, nvidia, 4).
-plataforma(samsung, 'SM006', 2021, 8, intel, 4, 256, tablet, intel, 2).
-plataforma(apple, 'AP007', 2023, 16, apple, 8, 512, laptop, apple, 8).
-plataforma(msi, 'MS008', 2022, 32, intel, 12, 1024, pc, nvidia, 12).
-plataforma(dell, 'DL009', 2020, 8, intel, 6, 256, laptop, nvidia, 4).
-plataforma(hp, 'HP010', 2023, 16, amd, 8, 512, pc, amd, 8).
-plataforma(lenovo, 'LV011', 2021, 4, intel, 4, 128, tablet, intel, 2).
-plataforma(asus, 'AS012', 2022, 64, amd, 16, 2048, pc, nvidia, 16).
-plataforma(acer, 'AC013', 2020, 8, intel, 4, 256, laptop, nvidia, 2).
-plataforma(dell, 'DL014', 2023, 32, amd, 12, 1024, laptop, nvidia, 8).
-plataforma(hp, 'HP015', 2021, 16, intel, 8, 512, pc, amd, 6).
-plataforma(microsoft, 'MC016', 2022, 8, intel, 4, 256, tablet, intel, 2).
-plataforma(lenovo, 'LV017', 2023, 16, amd, 8, 512, laptop, nvidia, 6).
-plataforma(asus, 'AS018', 2020, 32, intel, 12, 1024, pc, nvidia, 10).
-plataforma(acer, 'AC019', 2022, 8, amd, 6, 400, laptop, amd, 4).
-plataforma(dell, 'DL020', 2021, 16, intel, 8, 256, laptop, nvidia, 4).
-plataforma(hp, 'HP021', 2023, 4, intel, 4, 128, tablet, intel, 2).
-plataforma(samsung, 'SM022', 2022, 6, intel, 4, 256, tablet, intel, 2).
-plataforma(lenovo, 'LV023', 2020, 8, amd, 6, 512, laptop, amd, 4).
-plataforma(asus, 'AS024', 2023, 16, amd, 8, 1024, laptop, nvidia, 8).
-plataforma(msi, 'MS025', 2021, 32, intel, 10, 1024, pc, nvidia, 12).
-plataforma(dell, 'DL026', 2022, 8, intel, 6, 256, laptop, intel, 2).
-plataforma(hp, 'HP027', 2020, 16, amd, 8, 512, pc, nvidia, 6).
-plataforma(acer, 'AC028', 2023, 32, amd, 12, 2048, pc, amd, 12).
-plataforma(lenovo, 'LV029', 2021, 8, intel, 4, 256, laptop, nvidia, 4).
-plataforma(asus, 'AS030', 2022, 16, amd, 8, 400, laptop, amd, 6).
-plataforma(apple, 'AP031', 2023, 32, apple, 12, 1024, laptop, apple, 12).
-plataforma(dell, 'DL032', 2020, 4, intel, 4, 128, tablet, intel, 2).
-plataforma(hp, 'HP033', 2022, 16, intel, 8, 512, laptop, nvidia, 6).
-plataforma(microsoft, 'MC034', 2021, 8, intel, 4, 256, tablet, intel, 2).
-plataforma(lenovo, 'LV035', 2023, 64, amd, 16, 2048, pc, nvidia, 16).
-plataforma(asus, 'AS036', 2020, 8, intel, 6, 256, laptop, nvidia, 4).
-plataforma(acer, 'AC037', 2022, 16, amd, 8, 450, laptop, amd, 4).
-plataforma(msi, 'MS038', 2021, 32, intel, 12, 1024, pc, nvidia, 10).
-plataforma(dell, 'DL039', 2023, 16, amd, 8, 512, laptop, nvidia, 8).
-plataforma(hp, 'HP040', 2020, 8, intel, 4, 256, laptop, intel, 2).
-plataforma(samsung, 'SM041', 2022, 4, intel, 4, 128, tablet, intel, 2).
-plataforma(lenovo, 'LV042', 2021, 16, amd, 8, 512, pc, amd, 6).
-plataforma(asus, 'AS043', 2023, 32, amd, 12, 1024, laptop, nvidia, 12).
-plataforma(acer, 'AC044', 2020, 8, intel, 6, 350, laptop, nvidia, 4).
-plataforma(dell, 'DL045', 2022, 16, amd, 8, 512, laptop, amd, 6).
-plataforma(hp, 'HP046', 2021, 32, intel, 12, 1024, pc, nvidia, 8).
-plataforma(apple, 'AP047', 2023, 24, apple, 10, 512, laptop, apple, 10).
-plataforma(lenovo, 'LV048', 2020, 8, intel, 4, 256, laptop, nvidia, 2).
-plataforma(asus, 'AS049', 2022, 16, amd, 8, 480, laptop, nvidia, 6).
-plataforma(msi, 'MS050', 2023, 64, amd, 16, 2048, pc, nvidia, 16).
-plataforma(dell, 'DL051', 2021, 8, intel, 6, 256, laptop, intel, 2).
-plataforma(hp, 'HP052', 2022, 16, amd, 8, 512, pc, amd, 8).
-plataforma(acer, 'AC053', 2023, 32, intel, 12, 1024, pc, nvidia, 12).
+% Base de datos de plataformas de computo
+% Estructura: plataforma(Marca, SerialID, AnioAdquisicion, RAM_GB, Fabricante_CPU, Nucleos_CPU, Disco_GB, TipoComputador, Fabricante_GPU, VRAM_GB)
 
-% ========== CONSULTAS BÁSICAS ==========
+% 50+ entradas de plataformas
+plataforma(dell, dl001, 2022, 8, amd, 6, 256, laptop, nvidia, 4).
+plataforma(hp, hp002, 2021, 16, intel, 8, 512, laptop, nvidia, 6).
+plataforma(lenovo, lv003, 2023, 32, amd, 12, 1024, pc, amd, 8).
+plataforma(asus, as004, 2020, 4, intel, 4, 128, laptop, intel, 2).
+plataforma(acer, ac005, 2022, 16, amd, 8, 512, laptop, nvidia, 4).
+plataforma(samsung, sm006, 2021, 8, intel, 4, 256, tablet, intel, 2).
+plataforma(apple, ap007, 2023, 16, apple, 8, 512, laptop, apple, 8).
+plataforma(msi, ms008, 2022, 32, intel, 12, 1024, pc, nvidia, 12).
+plataforma(dell, dl009, 2020, 8, intel, 6, 256, laptop, nvidia, 4).
+plataforma(hp, hp010, 2023, 16, amd, 8, 512, pc, amd, 8).
+plataforma(lenovo, lv011, 2021, 4, intel, 4, 128, tablet, intel, 2).
+plataforma(asus, as012, 2022, 64, amd, 16, 2048, pc, nvidia, 16).
+plataforma(acer, ac013, 2020, 8, intel, 4, 256, laptop, nvidia, 2).
+plataforma(dell, dl014, 2023, 32, amd, 12, 1024, laptop, nvidia, 8).
+plataforma(hp, hp015, 2021, 16, intel, 8, 512, pc, amd, 6).
+plataforma(microsoft, mc016, 2022, 8, intel, 4, 256, tablet, intel, 2).
+plataforma(lenovo, lv017, 2023, 16, amd, 8, 512, laptop, nvidia, 6).
+plataforma(asus, as018, 2020, 32, intel, 12, 1024, pc, nvidia, 10).
+plataforma(acer, ac019, 2022, 8, amd, 6, 400, laptop, amd, 4).
+plataforma(dell, dl020, 2021, 16, intel, 8, 256, laptop, nvidia, 4).
+plataforma(hp, hp021, 2023, 4, intel, 4, 128, tablet, intel, 2).
+plataforma(samsung, sm022, 2022, 6, intel, 4, 256, tablet, intel, 2).
+plataforma(lenovo, lv023, 2020, 8, amd, 6, 512, laptop, amd, 4).
+plataforma(asus, as024, 2023, 16, amd, 8, 1024, laptop, nvidia, 8).
+plataforma(msi, ms025, 2021, 32, intel, 10, 1024, pc, nvidia, 12).
+plataforma(dell, dl026, 2022, 8, intel, 6, 256, laptop, intel, 2).
+plataforma(hp, hp027, 2020, 16, amd, 8, 512, pc, nvidia, 6).
+plataforma(acer, ac028, 2023, 32, amd, 12, 2048, pc, amd, 12).
+plataforma(lenovo, lv029, 2021, 8, intel, 4, 256, laptop, nvidia, 4).
+plataforma(asus, as030, 2022, 16, amd, 8, 400, laptop, amd, 6).
+plataforma(apple, ap031, 2023, 32, apple, 12, 1024, laptop, apple, 12).
+plataforma(dell, dl032, 2020, 4, intel, 4, 128, tablet, intel, 2).
+plataforma(hp, hp033, 2022, 16, intel, 8, 512, laptop, nvidia, 6).
+plataforma(microsoft, mc034, 2021, 8, intel, 4, 256, tablet, intel, 2).
+plataforma(lenovo, lv035, 2023, 64, amd, 16, 2048, pc, nvidia, 16).
+plataforma(asus, as036, 2020, 8, intel, 6, 256, laptop, nvidia, 4).
+plataforma(acer, ac037, 2022, 16, amd, 8, 450, laptop, amd, 4).
+plataforma(msi, ms038, 2021, 32, intel, 12, 1024, pc, nvidia, 10).
+plataforma(dell, dl039, 2023, 16, amd, 8, 512, laptop, nvidia, 8).
+plataforma(hp, hp040, 2020, 8, intel, 4, 256, laptop, intel, 2).
+plataforma(samsung, sm041, 2022, 4, intel, 4, 128, tablet, intel, 2).
+plataforma(lenovo, lv042, 2021, 16, amd, 8, 512, pc, amd, 6).
+plataforma(asus, as043, 2023, 32, amd, 12, 1024, laptop, nvidia, 12).
+plataforma(acer, ac044, 2020, 8, intel, 6, 350, laptop, nvidia, 4).
+plataforma(dell, dl045, 2022, 16, amd, 8, 512, laptop, amd, 6).
+plataforma(hp, hp046, 2021, 32, intel, 12, 1024, pc, nvidia, 8).
+plataforma(apple, ap047, 2023, 24, apple, 10, 512, laptop, apple, 10).
+plataforma(lenovo, lv048, 2020, 8, intel, 4, 256, laptop, nvidia, 2).
+plataforma(asus, as049, 2022, 16, amd, 8, 480, laptop, nvidia, 6).
+plataforma(msi, ms050, 2023, 64, amd, 16, 2048, pc, nvidia, 16).
+plataforma(dell, dl051, 2021, 8, intel, 6, 256, laptop, intel, 2).
+plataforma(hp, hp052, 2022, 16, amd, 8, 512, pc, amd, 8).
+plataforma(acer, ac053, 2023, 32, intel, 12, 1024, pc, nvidia, 12).
 
-% 1. Plataformas con CPU AMD adquiridas después de 2021
+% ========== CONSULTAS BASICAS ==========
+
+% 1. Plataformas con CPU AMD adquiridas despues de 2021
 plataformas_amd_post_2021(Marca, Serial) :-
     plataforma(Marca, Serial, Anio, _, amd, _, _, _, _, _),
     Anio > 2021.
 
-% 2. Plataformas que son tablets con más de 2GB de RAM
+% 2. Plataformas que son tablets con mas de 2GB de RAM
 tablets_ram_mayor_2gb(Marca, Serial, RAM) :-
     plataforma(Marca, Serial, _, RAM, _, _, _, tablet, _, _),
     RAM > 2.
@@ -70,12 +74,12 @@ plataformas_disco_rango(Marca, Serial, Disco) :-
     Disco >= 32,
     Disco =< 512.
 
-% 4. Contar cuántas plataformas son de ASUS
+% 4. Contar cuantas plataformas son de ASUS
 contar_asus(Total) :-
     findall(1, plataforma(asus, _, _, _, _, _, _, _, _, _), Lista),
     length(Lista, Total).
 
-% 5. Laptops con más de 4GB de RAM y menos de 512GB de disco
+% 5. Laptops con mas de 4GB de RAM y menos de 512GB de disco
 laptops_ram_disco(Marca, Serial, RAM, Disco) :-
     plataforma(Marca, Serial, _, RAM, _, _, Disco, laptop, _, _),
     RAM > 4,
@@ -83,8 +87,8 @@ laptops_ram_disco(Marca, Serial, RAM, Disco) :-
 
 % ========== CONSULTAS COMPLEJAS ==========
 
-% Consulta Compleja 1: Plataformas gaming (laptops o PCs con GPU NVIDIA de más de 6GB VRAM, 
-% CPU de 8+ núcleos y adquiridas después de 2020)
+% Consulta Compleja 1: Plataformas gaming (laptops o PCs con GPU NVIDIA de mas de 6GB VRAM, 
+% CPU de 8+ nucleos y adquiridas despues de 2020)
 plataformas_gaming(Marca, Serial, CPU_Nucleos, VRAM, Anio) :-
     plataforma(Marca, Serial, Anio, _, _, CPU_Nucleos, _, Tipo, nvidia, VRAM),
     (Tipo = laptop ; Tipo = pc),
@@ -92,8 +96,8 @@ plataformas_gaming(Marca, Serial, CPU_Nucleos, VRAM, Anio) :-
     VRAM > 6,
     Anio > 2020.
 
-% Consulta Compleja 2: Plataformas con mejor balance RAM/Núcleos 
-% (más de 12GB RAM, más de 6 núcleos, ratio RAM/Núcleos > 2)
+% Consulta Compleja 2: Plataformas con mejor balance RAM/Nucleos 
+% (mas de 12GB RAM, mas de 6 nucleos, ratio RAM/Nucleos > 2)
 plataformas_balance_optimo(Marca, Serial, RAM, Nucleos, Ratio) :-
     plataforma(Marca, Serial, _, RAM, _, Nucleos, _, _, _, _),
     RAM > 12,
@@ -108,7 +112,7 @@ plataformas_ecosistema_integrado(Marca, Serial, Fabricante_Componentes, RAM, Dis
     RAM >= 16,
     Disco >= 512.
 
-% Consulta Compleja 4: Ranking de plataformas por "score" de rendimiento
+% Consulta Compleja 4: Ranking de plataformas por score de rendimiento
 % Score = (RAM * Nucleos * VRAM) / 100
 ranking_rendimiento(Marca, Serial, Score) :-
     plataforma(Marca, Serial, _, RAM, _, Nucleos, _, _, _, VRAM),
@@ -122,7 +126,7 @@ top_rendimiento(N, TopPlatforms) :-
     append(TopList, _, SortedScores),
     TopPlatforms = TopList.
 
-% ========== CONSULTAS AUXILIARES ÚTILES ==========
+% ========== CONSULTAS AUXILIARES UTILES ==========
 
 % Listar todas las marcas disponibles (sin duplicados)
 marcas_disponibles(Marcas) :-
@@ -130,29 +134,13 @@ marcas_disponibles(Marcas) :-
           plataforma(Marca, Serial, Anio, RAM, CPU, Nucleos, Disco, Tipo, GPU, VRAM),
           Marcas).
 
-% Estadísticas de RAM promedio por tipo de computador
+% Estadisticas de RAM promedio por tipo de computador
 ram_promedio_por_tipo(Tipo, Promedio) :-
     findall(RAM, plataforma(_, _, _, RAM, _, _, _, Tipo, _, _), RAMs),
     sum_list(RAMs, Total),
     length(RAMs, Cantidad),
     Promedio is Total / Cantidad.
 
-% Plataformas más recientes (adquiridas en 2023)
+% Plataformas mas recientes (adquiridas en 2023)
 plataformas_recientes(Marca, Serial, RAM, CPU, Nucleos) :-
     plataforma(Marca, Serial, 2023, RAM, CPU, Nucleos, _, _, _, _).
-
-% ========== INSTRUCCIONES DE USO ==========
-% Para ejecutar las consultas básicas:
-% ?- plataformas_amd_post_2021(Marca, Serial).
-% ?- tablets_ram_mayor_2gb(Marca, Serial, RAM).
-% ?- plataformas_disco_rango(Marca, Serial, Disco).
-% ?- contar_asus(Total).
-% ?- laptops_ram_disco(Marca, Serial, RAM, Disco).
-%
-% Para ejecutar las consultas complejas:
-% ?- plataformas_gaming(Marca, Serial, Nucleos, VRAM, Anio).
-% ?- plataformas_balance_optimo(Marca, Serial, RAM, Nucleos, Ratio).
-% ?- plataformas_ecosistema_integrado(Marca, Serial, Fabricante, RAM, Disco).
-% ?- top_rendimiento(10, Top).
-%
-% Para ver todas las soluciones, presiona ';' después de cada resultado
