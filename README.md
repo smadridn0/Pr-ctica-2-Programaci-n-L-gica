@@ -52,12 +52,19 @@ Se llevaron a cabo diferentes pruebas en SWI-Prolog:
 ________________________________________
 ### Problemas encontrados
 •	Comparaciones con variables no instanciadas: resuelto asegurando instanciación antes de usar operadores.
+
 •	Recursión infinita: solucionada con Visitados para evitar ciclos.
+
 •	Orden en findall/min_member: se normalizó usando tuplas (Score, Marca, Serial).
+
 •	Horarios decimales: se recomienda representar en minutos enteros para mayor precisión.
+
 •	Mayor o igual en rutas: fue necesario crear un predicado aparte mayor_o_igual/2, ya que >= no funcionaba con variables.
+
 •	Restricción de horarios vencidos: se añadió la condición de no permitir tomar rutas en horarios ya pasados respecto al último tramo recorrido.
+
 •	Acumuladores de estado: se implementaron acumuladores para guardar rutas recorridas, precio y hora final. No teníamos total claridad sobre este punto, por lo que se investigó sobre acumuladores y recursión en Prolog para conseguirlo.
+
 ________________________________________
 ### Conclusiones
 1.	La práctica permitió comprender cómo estructurar bases de conocimiento en Prolog y consultarlas de manera declarativa, destacando la diferencia frente a lenguajes imperativos.
