@@ -71,33 +71,31 @@ El objetivo fue implementar un sistema capaz de construir itinerarios válidos c
 ### Pruebas realizadas
 
 Se llevaron a cabo diferentes pruebas en SWI-Prolog:
-•	Verificación de acumuladores: se validó que camino/5 sumara correctamente tiempo y costo en trayectos con escalas múltiples.
+•	Verificación de acumuladores: se validó que camino/5 sumara correctamente tiempo y costo en trayectos con escalas múltiples, al hacer un query de camino con Preciofinal, Hfinal y Camino como variables. (ej. ?-camino(medellin, cartagena, X, Y, Z))
 
-•	Pruebas de franja horaria: caminoentre/7 fue evaluado con intervalos reducidos (ej. [1,5]) confirmando que descartara rutas fuera de la ventana.
+•	Pruebas de franja horaria: caminoentre/7 fue evaluado con intervalos reducidos, confirmando que descartara rutas fuera de la ventana, por lo cual se procesaron hechos con rutas con mismo origen y destino en intervalos de tiempo diferentes, para verificar que se descartara el que estubiera por fuera de este. ej.?-caminoentre(bogota, cartagena, X, Y, Z,6,7), que debería solo tener en cuenta la ruta entre las 6 y las 7.
 
-•	Cheapest y Fastest: se probaron múltiples pares de ciudades. Por ejemplo, cheapest(medellin, bogota, ...) retornó el trayecto de menor costo (100), mientras que fastest(...) devolvió el de menor tiempo (2 horas). Se compararon manualmente contra las rutas disponibles.
+•	Cheapest y Fastest: se probaron primero rutas directas. Por ejemplo, ?-cheapest(medellin, bogota, X,Y,Z) retornó el trayecto de menor costo (100), mientras que ?-fastest(medellin, bogota, X,Y,Z)devolvió el de menor tiempo (2 horas). Tambien se probó con las rutas de medellin a cartagena ?-cheapest(medellin, cartagena, X,Y,Z), que son indirectas, para ver que si funcionaran, y efectivamente devolvió 123 como el precio mas varato (primero con el camino de 100usd para bogota y despues el de 23usd para cartagena), y 3 como el tiempo mas rapido, con la ruta de 2 horas a bogota y la de 1 hora a cartagena.
 
-•	Evitación de ciclos: se intentó forzar bucles cerrados (ej. Medellín → Bogotá → Medellín) y se comprobó que el sistema no los aceptaba, gracias al uso de Visitados.
+•	Evitación de ciclos: se intentó forzar bucles cerrados (ej. Medellín → Bogotá → Medellín) y se comprobó que el sistema no los aceptaba, gracias al uso de Visitados, añadiendo temporalmente la ruta ruta(bogota,medellin, avion, 23, 24, 10, si).
 
-•	Restricción de horarios vencidos: se comprobó que el predicado no permitiera elegir rutas que partían antes de llegar al destino previo.
+•	Restricción de horarios vencidos: se comprobó que el predicado no permitiera elegir rutas que partían antes de llegar al destino previo, al verificar que al hacer la consulta ?-camino(bogota, pasto, X, Y, Z) no tomara en cuenta las rutas ruta(bogota,cartagena, avion, 5, 7, 56, si) y ruta(cartagena,pasto, avion, 3, 4, 9, si) en el mismo camino.
 
-•	Pruebas sin solución: se consultaron pares de ciudades sin rutas disponibles, confirmando que el sistema devolviera false en vez de trayectos inválidos.
+•	Pruebas sin solución: se consultaron pares de ciudades sin rutas disponibles, confirmando que el sistema devolviera false en vez de trayectos inválidos, primero cambiando momentaneamente la disponibilidad de todas a no, y despues cambiando a no solamente la ruta ruta(medellin,bogota, avion, 3, 5, 200, si). y hacer la consulta ?-camino(medellin, bogota, X, Y, Z), para asegurarse de que esta no se tenga en cuenta.
 
 ________________________________________
 ### Problemas encontrados
-•	Comparaciones con variables no instanciadas: resuelto asegurando instanciación antes de usar operadores.
-
 •	Recursión infinita: solucionada con Visitados para evitar ciclos.
 
-•	Orden en findall/min_member: se normalizó usando tuplas (Score, Marca, Serial).
+•	No saber como comparar distintas solucionas de una misma consulta(para hacer el cheapest y fastest): se soluciono aprendiendo a usar el findall.
 
-•	Horarios decimales: se recomienda representar en minutos enteros para mayor precisión.
+•	Los horarios siguen el sistema sexagecimal y no decimal: los horarios se representan escribiendo el componente de horas en horario decimal(ej. escribir "15" en vez de "3"), y el componente de minutos como decimal(entonces las 2:30pm se escribiría como 14.30). Igual para las rutas de la base de datos solo se tomarón horarios antes de las doce y siempre con la hora del punto.
 
 •	Mayor o igual en rutas: fue necesario crear un predicado aparte mayor_o_igual/2, ya que >= no funcionaba con variables.
 
 •	Restricción de horarios vencidos: se añadió la condición de no permitir tomar rutas en horarios ya pasados respecto al último tramo recorrido.
 
-•	Acumuladores de estado: se implementaron acumuladores para guardar rutas recorridas, precio y hora final. No teníamos total claridad sobre este punto, por lo que se investigó sobre acumuladores y recursión en Prolog para conseguirlo.
+•	Acumuladores de estado: se implementaron acumuladores para guardar rutas recorridas, precio y hora final. No teníamos total claridad sobre como funcionan los acumuladores en prolog, por lo que se investigó sobre estos y sobre recursión para conseguirlo.
 
 ________________________________________
 ## Conclusiones
