@@ -29,7 +29,7 @@ Con más de 50 registros, la base cubre escenarios reales de mercado: equipos de
 
 •	Laptops con RAM > 4GB y Disco < 512GB: combina restricciones de memoria y almacenamiento.
 
-###Consultas complejas implementadas
+### Consultas complejas implementadas
 
 •	Plataformas gaming: busca configuraciones con GPU NVIDIA potente y CPU multinúcleo.
 
