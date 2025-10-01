@@ -15,10 +15,10 @@ El repositorio está organizado en las siguientes secciones principales:
 •	Conclusiones: sección final en la que se presentan los aprendizajes obtenidos, la importancia de las pruebas y la valoración del uso de Prolog para resolver problemas de bases de datos y planificación de rutas.
 
 ________________________________________
-### Challenge 1 — Base de datos de plataformas
+## Challenge 1 — Base de datos de plataformas
 Este challenge consiste en construir una base de conocimiento en Prolog que modele diferentes plataformas de cómputo (laptops, PCs, tablets). Cada hecho captura atributos clave: marca, identificador de serie, año de adquisición, memoria RAM, fabricante y núcleos de CPU, capacidad de disco, tipo de dispositivo, fabricante de GPU y cantidad de memoria de video.
 Con más de 50 registros, la base cubre escenarios reales de mercado: equipos de distintas marcas y años, con variedad de configuraciones que permiten poner a prueba consultas sencillas y complejas.
-Consultas básicas implementadas
+### Consultas básicas implementadas
 •	CPU AMD después de 2021: identifica dispositivos modernos de esa arquitectura.
 
 •	Tablets con más de 2GB de RAM: útil para distinguir equipos funcionales frente a gama baja.
@@ -29,7 +29,7 @@ Consultas básicas implementadas
 
 •	Laptops con RAM > 4GB y Disco < 512GB: combina restricciones de memoria y almacenamiento.
 
-Consultas complejas implementadas
+###Consultas complejas implementadas
 
 •	Plataformas gaming: busca configuraciones con GPU NVIDIA potente y CPU multinúcleo.
 
@@ -39,7 +39,7 @@ Consultas complejas implementadas
 
 •	Ranking de rendimiento: genera orden descendente de equipos con un puntaje calculado.
 
-Pruebas realizadas
+### Pruebas realizadas
 
 Se diseñaron y ejecutaron múltiples consultas en SWI-Prolog:
 •	Validación de filtros por año: se ejecutó plataformas_amd_post_2021/2 y se verificó que todos los resultados tuvieran año > 2021 y CPU AMD.
@@ -54,10 +54,10 @@ Se diseñaron y ejecutaron múltiples consultas en SWI-Prolog:
 
 Estas pruebas se registraron en tests/test_ch1.pl, con ejemplos de entradas y salidas esperadas.
 ________________________________________
-### Challenge 2 — Travel Planning Software
+## Challenge 2 — Travel Planning Software
 Este challenge modela un planificador de viajes que trabaja como un sistema de rutas entre ciudades. Cada ruta almacena información detallada: ciudad de origen y destino, medio de transporte, hora de salida, hora de llegada, precio en USD y disponibilidad.
 El objetivo fue implementar un sistema capaz de construir itinerarios válidos considerando tiempos de conexión, disponibilidad, precios y evitando rutas repetidas.
-Predicados principales
+### Predicados principales
 •	camino/5: construye un trayecto entre dos ciudades acumulando tiempo total y precio.
 
 •	caminoentre/7: versión que restringe los caminos a un intervalo horario definido por el usuario.
@@ -68,7 +68,7 @@ Predicados principales
 
 •	cheapestentre/7 y fastestentre/7: variantes con restricción horaria.
 
-Pruebas realizadas
+### Pruebas realizadas
 
 Se llevaron a cabo diferentes pruebas en SWI-Prolog:
 •	Verificación de acumuladores: se validó que camino/5 sumara correctamente tiempo y costo en trayectos con escalas múltiples.
@@ -100,7 +100,7 @@ ________________________________________
 •	Acumuladores de estado: se implementaron acumuladores para guardar rutas recorridas, precio y hora final. No teníamos total claridad sobre este punto, por lo que se investigó sobre acumuladores y recursión en Prolog para conseguirlo.
 
 ________________________________________
-### Conclusiones
+## Conclusiones
 1.	La práctica permitió comprender cómo estructurar bases de conocimiento en Prolog y consultarlas de manera declarativa, destacando la diferencia frente a lenguajes imperativos.
    
 2.	Se evidenció la importancia de diseñar predicados recursivos robustos, asegurando condiciones de parada y el uso de listas de visitados para evitar ciclos en problemas de grafos.
