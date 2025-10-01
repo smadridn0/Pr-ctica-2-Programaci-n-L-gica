@@ -1,4 +1,4 @@
-ruta(medellin,bogota, avion, 11, 1, 100, si).
+ruta(medellin,bogota, avion, 8, 10, 100, si).
 ruta(medellin,bogota, avion, 3, 5, 200, si).
 ruta(bogota,cartagena, avion, 2, 3, 23, si).
 ruta(bogota,cartagena, avion, 5, 7, 56, si).
@@ -17,6 +17,7 @@ caminoe_acum(Origen, Origen, Visitados, Camino, Preciofin, Preciofin,Hfinal,Hfin
 caminoe_acum(Origen, Destino, Visitados, Camino,Preciofin, Precioaccum,Hfinal, Haccum, Posi,Hde,Harr):-ruta(Origen, Intermedio,_,Hsal,Hlleg,Precioruta,si),mayor_o_igual(Harr, Hlleg),mayor_o_igual(Hsal, Hde),mayor_o_igual(Hsal, Posi),H is Haccum + Hlleg-Hsal ,Precio is Precioaccum+Precioruta, \+ member(Intermedio, Visitados), caminoe_acum(Intermedio, Destino, [Intermedio | Visitados], Camino, Preciofin, Precio, Hfinal, H,Hlleg,Hde,Harr).      %casi igual al camino normal, pero revisa que no se tomen rutas que partan o lleguen por fuera del margen establecido
 cheapestentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max):-findall((Preciofinal, Camino), caminoentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max), Values), min_member((Preciofinal, Camino),Values).                                                                                                                                                                                                                                       %igual al cheapest normal, pero usando el caminoentre para filtrar el tiempo
 fastestentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max):-findall((Hfinal, Camino), caminoentre(Origen, Destino, Camino, Preciofinal,Hfinal,Min,Max), Values), min_member((Hfinal, Camino),Values).                                                                                                                                                                                                                                                  %igual al fastest normal, pero usando el caminoentre para filtrar el tiempo
+
 
 
 
