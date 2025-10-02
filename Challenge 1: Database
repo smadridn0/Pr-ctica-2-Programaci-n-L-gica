@@ -126,21 +126,4 @@ top_rendimiento(N, TopPlatforms) :-
     append(TopList, _, SortedScores),
     TopPlatforms = TopList.
 
-% ========== CONSULTAS AUXILIARES UTILES ==========
 
-% Listar todas las marcas disponibles (sin duplicados)
-marcas_disponibles(Marcas) :-
-    setof(Marca, Serial^Anio^RAM^CPU^Nucleos^Disco^Tipo^GPU^VRAM^
-          plataforma(Marca, Serial, Anio, RAM, CPU, Nucleos, Disco, Tipo, GPU, VRAM),
-          Marcas).
-
-% Estadisticas de RAM promedio por tipo de computador
-ram_promedio_por_tipo(Tipo, Promedio) :-
-    findall(RAM, plataforma(_, _, _, RAM, _, _, _, Tipo, _, _), RAMs),
-    sum_list(RAMs, Total),
-    length(RAMs, Cantidad),
-    Promedio is Total / Cantidad.
-
-% Plataformas mas recientes (adquiridas en 2023)
-plataformas_recientes(Marca, Serial, RAM, CPU, Nucleos) :-
-    plataforma(Marca, Serial, 2023, RAM, CPU, Nucleos, _, _, _, _).
