@@ -1,5 +1,5 @@
 # Prac2-LogProg
-## Autores: Matías Cardona Acosta, Simón Madrid Noreña, Miguel Muñoz
+## Autores: Matías Cardona Acosta, Simón Madrid Noreña, Miguel Muñoz Jiménez
 ________________________________________
 ### Índice del repositorio
 El repositorio está organizado en las siguientes secciones principales:
