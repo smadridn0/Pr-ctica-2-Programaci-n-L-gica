@@ -118,12 +118,4 @@ ranking_rendimiento(Marca, Serial, Score) :-
     plataforma(Marca, Serial, _, RAM, _, Nucleos, _, _, _, VRAM),
     Score is (RAM * Nucleos * VRAM) / 100.
 
-% Consulta para obtener top N plataformas por rendimiento
-top_rendimiento(N, TopPlatforms) :-
-    findall((Score, Marca, Serial), ranking_rendimiento(Marca, Serial, Score), Scores),
-    sort(0, @>=, Scores, SortedScores),
-    length(TopList, N),
-    append(TopList, _, SortedScores),
-    TopPlatforms = TopList.
-
 
