@@ -52,6 +52,14 @@ Se diseñaron y ejecutaron múltiples consultas en SWI-Prolog:
 
 •	Ranking de rendimiento: se ejecutó top_rendimiento(5,Top) y se contrastó con cálculos manuales para confirmar el orden.
 
+•   Plataformas gaming : se hizo prueba plataformas_juegos/5 para verificar que estos devolviesen laptops o PCs con GPU NVIDIA > 6GB de VRAM, CPU ≥ 8 núcleos y compradas después de 2020.
+
+•   Balance RAM/núcleos: se hizo la prueba plataformas_balance_optimo/5 comprobando que las plataformas cumplieran RAM ≥ 12GB, más de 6 núcleos y relación RAM/núcleos ≥ 2.
+
+•   Ecosistema integrado: se hizo la prueba plataformas_ecosistema_integrado/5 comprobando que el fabricante de la CPU fuese el mismo que el fabricante de la GPU, y que las especificaciones mínimas correspondiesen a 16GB de RAM y 512GB de disco.
+
+•   Ranking de rendimiento: se hizo la prueba ranking_rendimiento/3 para calcular los puntajes, que luego comprobamos manualmente con las posiciones más altas del ranking.
+
 Estas pruebas se registraron en tests/test_ch1.pl, con ejemplos de entradas y salidas esperadas.
 ________________________________________
 ## Challenge 2 — Travel Planning Software
