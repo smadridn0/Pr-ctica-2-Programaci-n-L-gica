@@ -1,12 +1,12 @@
-/*  
-  BASE DE DATOS DE PLATAFORMAS DE CÓMPUTO
-  Cada hecho plataforma/10 almacena la información técnica de un equipo.
-  Estructura:
-  plataforma(Marca, SerialID, AnioAdquisicion, RAM_GB, Fabricante_CPU,
-             Nucleos_CPU, Disco_GB, TipoComputador, Fabricante_GPU, VRAM_GB).
-*/
+% Base de datos de plataformas de cómputo
 
-% Hechos: registros de diferentes plataformas de cómputo variadas.
+% Hecho base: plataforma() con 10 argumentos.
+% Estructura:
+% plataforma(Marca, SerialID, AñoAdquisicion, RAM_GB, Fabricante_CPU,
+%            Nucleos_CPU, Disco_GB, TipoComputador, Fabricante_GPU, VRAM_GB).
+% Cada hecho representa una plataforma con sus especificaciones técnicas.
+
+% 53 registros de plataformas 
 plataforma(dell, dl001, 2022, 8, amd, 6, 256, laptop, nvidia, 4).
 plataforma(hp, hp002, 2021, 16, intel, 8, 512, laptop, nvidia, 6).
 plataforma(lenovo, lv003, 2023, 32, amd, 12, 1024, pc, amd, 8).
@@ -61,52 +61,64 @@ plataforma(dell, dl051, 2021, 8, intel, 6, 256, laptop, intel, 2).
 plataforma(hp, hp052, 2022, 16, amd, 8, 512, pc, amd, 8).
 plataforma(acer, ac053, 2023, 32, intel, 12, 1024, pc, nvidia, 12).
 
-/*  
-  CONSULTAS BÁSICAS
-*/
 
-% Plataformas con CPU AMD adquiridas después de 2021
+%  Consultas básicas
+
+
+% Consulta básica 1: plataformas_amd_post_2021 con 2 argumentos
+% Devuelve plataformas con CPU AMD adquiridas después de 2021.
 plataformas_amd_post_2021(Marca, Serial) :-
-    plataforma(Marca, Serial, Anio, _, amd, _, _, _, _, _),
-    Anio > 2021.
+    plataforma(Marca, Serial, Año, _, amd, _, _, _, _, _),
+    Año > 2021.
 
-% Tablets con más de 2 GB de RAM
+% Consulta básica 2: tablets_ram_mayor_2gb con 3 argumentos
+% Selecciona tablets cuya RAM es mayor a 2 GB.
 tablets_ram_mayor_2gb(Marca, Serial, RAM) :-
     plataforma(Marca, Serial, _, RAM, _, _, _, tablet, _, _),
     RAM > 2.
 
-% Plataformas con disco duro entre 32 GB y 512 GB
+% Consulta básica 3: plataformas_disco_rango con 3 argumentos
+% Encuentra plataformas con capacidad de disco entre 32 GB y 512 GB.
 plataformas_disco_rango(Marca, Serial, Disco) :-
     plataforma(Marca, Serial, _, _, _, _, Disco, _, _, _),
     Disco >= 32,
     Disco =< 512.
 
-% Contar cuántas plataformas son de ASUS
+% Consulta básica 4: contar_asus con 1 argumento
+% Cuenta cuántas plataformas son de la marca ASUS.
+% Utiliza findall con 3 argumentos (elemento, condición, lista) para recolectar ocurrencias y length con 2 argumentos (lista, total) para contar.
 contar_asus(Total) :-
     findall(1, plataforma(asus, _, _, _, _, _, _, _, _, _), Lista),
     length(Lista, Total).
 
-% Laptops con más de 4 GB de RAM y menos de 512 GB de disco
+% Consulta básica 5: laptops_ram_disco/4
+% Laptops con más de 4 GB de RAM y menos de 512 GB de disco.
 laptops_ram_disco(Marca, Serial, RAM, Disco) :-
     plataforma(Marca, Serial, _, RAM, _, _, Disco, laptop, _, _),
     RAM > 4,
     Disco < 512.
 
-/*  
-  CONSULTAS COMPLEJAS
-*/
 
-% Plataformas gaming: laptops o PCs con GPU NVIDIA (>6GB VRAM),
-% CPU de 8+ núcleos y adquiridas después de 2020
-plataformas_gaming(Marca, Serial, CPU_Nucleos, VRAM, Anio) :-
-    plataforma(Marca, Serial, Anio, _, _, CPU_Nucleos, _, Tipo, nvidia, VRAM),
+%  Consultas complejas
+
+
+% Consulta Compleja 1: plataformas_gaming con 5 argumentos.
+% Filtra plataformas tipo laptop o pc con:
+% - GPU NVIDIA con más de 6GB VRAM
+% - CPU de 8 o más núcleos
+% - Adquiridas después de 2020
+plataformas_gaming(Marca, Serial, CPU_Nucleos, VRAM, Año) :-
+    plataforma(Marca, Serial, Año, _, _, CPU_Nucleos, _, Tipo, nvidia, VRAM),
     (Tipo = laptop ; Tipo = pc),
     CPU_Nucleos >= 8,
     VRAM > 6,
-    Anio > 2020.
+    Año > 2020.
 
-% Plataformas con buen balance RAM/Núcleos
-% (RAM > 12 GB, Núcleos > 6, Ratio RAM/Núcleos > 2)
+% Consulta Compleja 2: plataformas_balance_optimo con 5 argumentos
+% Busca plataformas con buena relación RAM/Núcleos:
+% - Más de 12 GB de RAM
+% - Más de 6 núcleos
+% - Ratio RAM/Núcleos > 2
 plataformas_balance_optimo(Marca, Serial, RAM, Nucleos, Ratio) :-
     plataforma(Marca, Serial, _, RAM, _, Nucleos, _, _, _, _),
     RAM > 12,
@@ -114,15 +126,17 @@ plataformas_balance_optimo(Marca, Serial, RAM, Nucleos, Ratio) :-
     Ratio is RAM / Nucleos,
     Ratio > 2.
 
-% Plataformas con ecosistema integrado (CPU y GPU del mismo fabricante)
-% y especificaciones altas (RAM >= 16, Disco >= 512)
-plataformas_ecosistema_integrado(Marca, Serial, Fabricante, RAM, Disco) :-
-    plataforma(Marca, Serial, _, RAM, Fabricante, _, Disco, _, Fabricante, _),
+% Consulta Compleja 3: plataformas_ecosistema_integradom con 5 argumentos
+% Plataformas donde CPU y GPU son del mismo fabricante
+% y tienen especificaciones altas (RAM ≥ 16 GB, Disco ≥ 512 GB)
+plataformas_ecosistema_integrado(Marca, Serial, Fabricante_Componentes, RAM, Disco) :-
+    plataforma(Marca, Serial, _, RAM, Fabricante_Componentes, _, Disco, _, Fabricante_Componentes, _),
     RAM >= 16,
     Disco >= 512.
 
-% Ranking de plataformas por rendimiento
-% Score = (RAM * Núcleos * VRAM) / 100
+% Consulta Compleja 4: ranking_rendimiento con 3 argumentos
+% Calcula un puntaje de rendimiento para cada plataforma:
+% Score = (RAM * Nucleos * VRAM) / 100
 ranking_rendimiento(Marca, Serial, Score) :-
     plataforma(Marca, Serial, _, RAM, _, Nucleos, _, _, _, VRAM),
     Score is (RAM * Nucleos * VRAM) / 100.
