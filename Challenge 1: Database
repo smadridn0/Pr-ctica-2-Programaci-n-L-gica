@@ -91,7 +91,7 @@ contar_asus(Total) :-
     findall(1, plataforma(asus, _, _, _, _, _, _, _, _, _), Lista),
     length(Lista, Total).
 
-% Consulta básica 5: laptops_ram_disco/4
+% Consulta básica 5: laptops_ram_disco con 4 argumentos
 % Laptops con más de 4 GB de RAM y menos de 512 GB de disco.
 laptops_ram_disco(Marca, Serial, RAM, Disco) :-
     plataforma(Marca, Serial, _, RAM, _, _, Disco, laptop, _, _),
