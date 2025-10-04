@@ -59,8 +59,6 @@ Se diseñaron y ejecutaron múltiples consultas en SWI-Prolog:
 •   Ecosistema integrado: se hizo la prueba plataformas_ecosistema_integrado/5 comprobando que el fabricante de la CPU fuese el mismo que el fabricante de la GPU, y que las especificaciones mínimas correspondiesen a 16GB de RAM y 512GB de disco.
 
 •   Ranking de rendimiento: se hizo la prueba ranking_rendimiento/3 para calcular los puntajes, que luego comprobamos manualmente con las posiciones más altas del ranking.
-
-Estas pruebas se registraron en tests/test_ch1.pl, con ejemplos de entradas y salidas esperadas.
 ________________________________________
 ## Challenge 2 — Travel Planning Software
 Este challenge modela un planificador de viajes que trabaja como un sistema de rutas entre ciudades. Cada ruta almacena información detallada: ciudad de origen y destino, medio de transporte, hora de salida, hora de llegada, precio en USD y disponibilidad.
